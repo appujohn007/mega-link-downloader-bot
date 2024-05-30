@@ -5,7 +5,7 @@ logger = logging.getLogger(__name__)
 
 import os
 
-from fsplit.filesplit import Filesplit
+import Filesplit
 
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
