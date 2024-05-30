@@ -66,7 +66,7 @@ async def megadl(bot, update):
             usermsg = await bot.send_message(
                 chat_id=update.chat.id,
                 text=f"""<b>Processing...⏳</b>""",
-                reply_to_message_id=update.message_id
+                reply_to_message_id=update.id
             )
             description = ""
             megalink = None
@@ -111,14 +111,14 @@ async def megadl(bot, update):
                 await bot.edit_message_text(
                     chat_id=update.chat.id,
                     text=error_text,
-                    message_id=usermsg.message_id
+                    message_id=usermsg.id
                 )
             if a == 1:
                 try:
                     await bot.edit_message_text(
                         chat_id=update.chat.id,
                         text=Translation.DOWNLOAD_START,
-                        message_id=usermsg.message_id
+                        message_id=usermsg.id
                     )
                     megalink = url
                     if megalink is not None:
